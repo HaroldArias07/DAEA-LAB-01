@@ -62,13 +62,13 @@ namespace Lab01_01
 
                     case "5":
                         Console.WriteLine("Calculando...");
-                        Raiz();
+                        Primos();
                         Console.ReadKey();
                         break;
 
                     case "6":
                         Console.WriteLine("Calculando...");
-                        Primos();
+                        Raiz();
                         Console.ReadKey();
                         break;
 
@@ -139,7 +139,30 @@ namespace Lab01_01
         //Función para calcular los 10 primeros numeros primos
         static void Primos()
         {
-            Console.WriteLine("");
+            int n = 2;
+            int total = 1;
+            while (total <= 10)
+            {
+                Boolean esPrimo = true;
+
+                for (int i = 2; i < n; i++)
+                {
+                    if (n % i == 0)
+                    {
+                        esPrimo = false;
+                        break;
+                    }
+
+                }
+
+                if (esPrimo)
+                {
+                    Console.WriteLine(n);
+                    total++;
+                }
+
+                n++;
+            }
         }
 
         //Procedimiento que imprime la raíz cuadrada de los 10 primeros números
